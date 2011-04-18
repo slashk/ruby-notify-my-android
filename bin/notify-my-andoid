@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__) + '/../lib')
+
+require 'ruby-notify-my-android'
+
+options = {
+            :apikey => nil,
+            :description => "I am testing Prowly, and it works!", 
+            :event => "Prowly notification", 
+            :application => "Prowly", 
+            :priority => "NORMAL",
+            :url => nil }
+
+
+result = NMA.notify do |n|
+  n.apikey      = options[:apikey]
+  n.priority    = options[:priority]
+  n.application = options[:application]
+  n.event       = options[:event]
+  n.description = options[:description]
+  n.url         = options[:url]
+end
