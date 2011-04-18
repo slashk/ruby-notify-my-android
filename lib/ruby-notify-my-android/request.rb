@@ -1,5 +1,4 @@
 require 'net/https'
-# require 'response'
 require 'singleton'
 
 module NMA

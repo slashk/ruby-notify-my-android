@@ -3,6 +3,7 @@
 $LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__) + '/../lib')
 
 require 'ruby-notify-my-android'
+require 'yaml'
 
 options = {
             :apikey => nil,
@@ -12,12 +13,19 @@ options = {
             :priority => "NORMAL",
             :url => nil }
 
+options[:apikey] = ARGV[0]
 
-result = NMA.notify do |n|
-  n.apikey      = options[:apikey]
-  n.priority    = options[:priority]
-  n.application = options[:application]
-  n.event       = options[:event]
-  n.description = options[:description]
-  n.url         = options[:url]
-end
+# result = NMA.notify do |n|
+#   n.apikey      = options[:apikey]
+#   n.priority    = options[:priority]
+#   n.application = options[:application]
+#   n.event       = options[:event]
+#   n.description = options[:description]
+#   n.url         = options[:url]
+# end
+
+result = NMA.verify(options[:apikey])
+puts options[:apikey]
+puts result.raw.to_s
+puts result.code
+puts result.body.to_yaml

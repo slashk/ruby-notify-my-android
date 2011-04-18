@@ -15,13 +15,12 @@ Jeweler::Tasks.new do |gem|
   gem.name = "ruby-notify-my-android"
   gem.homepage = "http://github.com/slashk/ruby-notify-my-android"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Send notifications to Android devices via the Notify My Android API}
+  gem.description = %Q{Send notifications to Android devices via the Notify My Android API. Details about the API are available at https://nma.usk.bz/api.php .}
   gem.email = "ken.pepple@rabbityard.com"
   gem.authors = ["Ken Pepple"]
-  # Include your dependencies below. Runtime dependencies are required when using your gem,
-  # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
+  gem.executables = [ 'notify-my-android' ] 
+  gem.add_runtime_dependency "xml-simple", ">= 1.0.15"
   #  gem.add_development_dependency 'rspec', '> 1.2.3'
 end
 Jeweler::RubygemsDotOrgTasks.new
