@@ -1,5 +1,6 @@
 require 'ruby-notify-my-android/request'
 require 'ruby-notify-my-android/response'
+require 'ruby-notify-my-android/notification'
 
 # This is the main Notify My Andoid module
 #
