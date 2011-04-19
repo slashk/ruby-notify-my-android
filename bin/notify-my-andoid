@@ -5,34 +5,25 @@ $LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__) + '/../lib')
 require 'ruby-notify-my-android'
 require 'yaml'
 
-options = {
-            :apikey => nil,
-            :description => "I am testing Prowly, and it works!", 
-            :event => "Prowly notification", 
-            :application => "Prowly", 
-            :priority => Priority::NORMAL,
-            :url => nil }
+# set defaults
+options = { :apikey => nil,
+            :description => "test description", 
+            :event => "test event", 
+            :application => "NMA", 
+            :priority => Priority::NORMAL }
 
+# use first argument on command line as API key
 options[:apikey] = ARGV[0]
 
-# result = NMA.notify do |n|
-#   n.apikey      = options[:apikey]
-#   n.priority    = options[:priority]
-#   n.application = options[:application]
-#   n.event       = options[:event]
-#   n.description = options[:description]
-#   n.url         = options[:url]
-# end
-
-result = NMA.verify(options[:apikey])
-puts options[:apikey]
-puts result.raw.to_s
-puts result.code
-puts result.body.to_yaml
-puts
-
+# send notification
 result = NMA.notify do |n|
-  n.apikey = options[:apikey]
+  n.apikey      = options[:apikey]
+  n.priority    = options[:priority]
+  n.application = options[:application]
+  n.event       = options[:event]
+  n.description = options[:description]
+  n.url         = options[:url]
 end
-puts result.raw.to_s
-puts result.body.to_yaml
+
+# putput raw XML response
+puts result.raw
