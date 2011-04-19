@@ -2,6 +2,53 @@
 
 Send notifications to Android devices via the Notify My Android API. Details about the API are available at https://nma.usk.bz/api.php .
 
+== Installation
+	
+	gem install ruby-notify-my-android
+
+== Usage as a Gem
+	
+Sending a notification via ruby-notify-my-android gem
+
+  require 'ruby-notify-my-android'
+
+	NMA.notify do |n| 
+	  n.apikey = "9d1538ab7b52360e906e0e766f34501b69edde92fe3409e9" # can also be list such as ["key1", "key2"]
+	  n.priority = NMA::Priority::MODERATE
+	  n.application = "NMA"
+	  n.event = "Notification"
+	  n.description = "Your server is under attack!!!"
+	  n.url = "http://www.nma.bz"
+	end
+
+== Using the API
+
+There are only a few commands that are available:
+* notify(notification block): send a notification via the block given (see above) and returns standard API response.
+* verify(apikey): send API call to verify key. returns standard API response.
+* valid_key?(apikey): send API call to verify key. returns true or false.
+* remaining_calls(apikey): send API call to verify key. returns number of remaining calls as integer.
+* version: returns version of this gem
+
+The standard API response for a successful call is as follows:
+  #<NMA::Response:0x1059682b8
+   @body={"success"=>[{"resettimer"=>"59", "code"=>"200", "remaining"=>"798"}]},
+   @code="200",
+   @raw=
+    "<?xml version=\"1.0\" encoding=\"UTF-8\"?><nma><success code=\"200\" remaining=\"798\" resettimer=\"59\" /></nma>\r\n",
+   @response={"resettimer"=>"59", "code"=>"200", "remaining"=>"798"}>
+
+The standard API response for a unsuccessful call is as follows:
+  @body=
+    {"error"=>
+      [{"code"=>"400", "content"=>"Parameter 'apikey' length is invalid."}]},
+   @code="200",
+   @raw=
+    "<?xml version=\"1.0\" encoding=\"UTF-8\"?><nma><error code=\"400\" >Parameter 'apikey' length is invalid.</error></nma>\r\n",
+   @response={"code"=>"400", "content"=>"Parameter 'apikey' length is invalid."}>
+
+Note that the @code signifies the success or failure of the HTTP call, not the NMA call. Use the @response["code"] for that determination.
+
 == Contributing to ruby-notify-my-android
  
 * Familiarize yourself with the documentation at https://nma.usk.bz/api.php
@@ -15,5 +62,6 @@ Send notifications to Android devices via the Notify My Android API. Details abo
 
 == Copyright
 
-Copyright (c) 2011 Ken Pepple. See LICENSE.txt for further details.
-
+Written by Ken Pepple
+Based on Prowly gem (https://github.com/rafmagana/prowly) by Rafael Magana
+See LICENSE.txt for further details.
