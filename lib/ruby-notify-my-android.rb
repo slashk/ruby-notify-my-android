@@ -25,8 +25,8 @@ module NMA
 
   def remaining_calls(key)
     result = verify(key)
-    return result.remaining if result.succeeded?
-    result.message
+    return result.response["remaining"].to_i if result.succeeded?
+    result.response["content"]
   end
 
   def version

@@ -10,7 +10,7 @@ options = {
             :description => "I am testing Prowly, and it works!", 
             :event => "Prowly notification", 
             :application => "Prowly", 
-            :priority => "NORMAL",
+            :priority => Priority::NORMAL,
             :url => nil }
 
 options[:apikey] = ARGV[0]
@@ -28,4 +28,11 @@ result = NMA.verify(options[:apikey])
 puts options[:apikey]
 puts result.raw.to_s
 puts result.code
+puts result.body.to_yaml
+puts
+
+result = NMA.notify do |n|
+  n.apikey = options[:apikey]
+end
+puts result.raw.to_s
 puts result.body.to_yaml

@@ -15,32 +15,20 @@ module NMA
     # A hash of the returned XML response
     attr_accessor :body
     
-    attr_accessor :remaining
-
+    # A hash of the cooked XML
+    attr_accessor :response
+    
     def initialize(response)
       self.raw = response.body
       self.code = response.code
       self.body = XmlSimple.xml_in(response.body)
-      self.remaining = self.body.remaining
-    end
-
-    def to_hash
-      XmlSimple.xml_in(xml)
-    end
-
-    def valid?
-      code == 200
+      self.response = self.body[self.body.keys.first].first
     end
 
     def succeeded?
-      code == 200
+      self.response["code"] == "200"
     end
 
-    def message
-    end
-
-    def xml
-      @xml ||= self.body
-    end
   end
+
 end

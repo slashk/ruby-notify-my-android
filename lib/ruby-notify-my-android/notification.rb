@@ -9,14 +9,11 @@ module NMA
     class NoDescriptionGiven < RuntimeError; end
     class NoApplicationNameGiven < RuntimeError; end
     class DuplicatedAssignmentOfApiKey < RuntimeError; end
-  
+
     attr_accessor :application, :description
     attr_accessor :providerkey, :priority, :event, :url
     attr_writer :apikey
-  
-    alias :apikeys= :apikey=
-    alias :apikeys :apikey
-    
+
     def apikey
       if @apikey.is_a? Array
         @apikey.join(',')
@@ -24,7 +21,7 @@ module NMA
         @apikey
       end
     end
-    
+
     def initialize(params = {})
       if params[:apikeys] and params[:apikey]
         raise DuplicatedAssignmentOfApiKey, "Use apikey or apikeys, not both"
@@ -37,7 +34,7 @@ module NMA
       @priority     = params[:priority]     || Priority::NORMAL
       @url          = params[:url]          || nil
     end
-  
+
     def to_params
       raise NoAPIKeyGiven if apikey.nil?
       raise NoApplicationNameGiven if @application.nil?
@@ -56,7 +53,10 @@ module NMA
       end
       attributes.sort
     end
-  
+
+    alias :apikeys= :apikey=
+    alias :apikeys :apikey
+
   end
 
   class Priority
@@ -64,8 +64,10 @@ module NMA
      MODERATE  = -1
      NORMAL    = 0
      HIGH      = 1
-     EMERGENCY = 2     
+     EMERGENCY = 2
+  end
+  
+  class Exception
   end
 
 end
-
