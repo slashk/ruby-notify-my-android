@@ -12,14 +12,14 @@ Sending a notification via ruby-notify-my-android gem
 
   require 'ruby-notify-my-android'
 
-	NMA.notify do |n| 
-	  n.apikey = "9d1538ab7b52360e906e0e766f34501b69edde92fe3409e9" # can also be list such as ["key1", "key2"]
-	  n.priority = NMA::Priority::MODERATE
-	  n.application = "NMA"
-	  n.event = "Notification"
-	  n.description = "Your server is under attack!!!"
-	  n.url = "http://www.nma.bz"
-	end
+  NMA.notify do |n| 
+    n.apikey = "9d1538ab7b52360e906e0e766f34501b69edde92fe3409e9" # can also be list such as ["key1", "key2"]
+    n.priority = NMA::Priority::MODERATE
+    n.application = "NMA"
+    n.event = "Notification"
+    n.description = "Your server is under attack!!!"
+    n.url = "http://www.nma.bz"
+  end
 
 == Using the API
 
