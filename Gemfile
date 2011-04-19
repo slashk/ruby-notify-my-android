@@ -4,6 +4,7 @@ source "http://rubygems.org"
 #   gem "activesupport", ">= 2.3.5"
 
 gem "xml-simple", ">= 1.0.15"
+gem "cgi"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
