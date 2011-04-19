@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ruby-notify-my-android}
-  s.version = "0.3.0"
+  s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ken Pepple"]
@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
     "lib/ruby-notify-my-android/notification.rb",
     "lib/ruby-notify-my-android/request.rb",
     "lib/ruby-notify-my-android/response.rb",
+    "ruby-notify-my-android.gemspec",
     "test/helper.rb",
     "test/test_ruby-notify-my-android.rb"
   ]
