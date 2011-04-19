@@ -21,11 +21,15 @@ class TestRubyNotifyMyAndroid < Test::Unit::TestCase
     default_notify_params = "&application=NMA&description=This%20is%20the%20default%20description&event=NMA%20is%20working!!&priority=0"
     important_notify_params = "&application=NMA&description=This%20is%20the%20default%20description&event=NMA%20is%20working!!&priority=" + NMA::Priority::EMERGENCY.to_s
     good_notify_endpoint = @api_endpoint + "notify?apikey=" + @good_apikey + default_notify_params
+    dbl_good_notify_endpoint = @api_endpoint + "notify?apikey=" + @good_apikey + "," + @good_apikey + default_notify_params
     bad_notify_endpoint = @api_endpoint + "notify?apikey=" + @bad_apikey + default_notify_params
     important_notify_endpoint = @api_endpoint + "notify?apikey=" + @good_apikey + important_notify_params
     good_notify_return = '<?xml version="1.0" encoding="UTF-8"?><nma><success code="200" remaining="790" resettimer="43" /></nma>'
     bad_notify_return = '<?xml version="1.0" encoding="UTF-8"?><nma><error code="401" >None of the API keys provided were valid.</error></nma>'
     stub_request(:get, good_notify_endpoint).
+                    with(:headers => {'Accept'=>'*/*'}).
+                    to_return(:status => 200, :body => good_notify_return, :headers => {})
+    stub_request(:get, dbl_good_notify_endpoint).
                     with(:headers => {'Accept'=>'*/*'}).
                     to_return(:status => 200, :body => good_notify_return, :headers => {})
     stub_request(:get, bad_notify_endpoint).
@@ -62,15 +66,15 @@ class TestRubyNotifyMyAndroid < Test::Unit::TestCase
     assert_equal("43", result.response["resettimer"])
   end
 
-  # def test_should_notify_with_multiple_keys
-  #   result = NMA.notify do |n|
-  #     n.apikey = @good_apikey
-  #   end
-  #   assert_equal("200", result.code)
-  #   assert_equal("790", result.response["remaining"])
-  #   assert_equal("200", result.response["code"])
-  #   assert_equal("43", result.response["resettimer"])
-  # end
+  def test_should_notify_with_multiple_keys
+    result = NMA.notify do |n|
+      n.apikey = [@good_apikey, @good_apikey]
+    end
+    assert_equal("200", result.code)
+    assert_equal("790", result.response["remaining"])
+    assert_equal("200", result.response["code"])
+    assert_equal("43", result.response["resettimer"])
+  end
 
   def test_should_not_notify_with_bad_apikey
     result = NMA.notify do |n|
@@ -93,6 +97,12 @@ class TestRubyNotifyMyAndroid < Test::Unit::TestCase
     result = NMA.remaining_calls(@good_apikey)
     assert_equal(799, result)
   end
+
+  def test_should_not_show_remaining_calls_with_bad_apikey
+    result = NMA.remaining_calls(@bad_apikey)
+    assert_equal("The API key is not valid.", result)
+  end
+
 
   def test_for_valid_key
     assert_equal(true, NMA.valid_key?(@good_apikey))
