@@ -63,5 +63,7 @@ Note that the @code signifies the success or failure of the HTTP call, not the N
 == Copyright
 
 Written by Ken Pepple
+
 Based on Prowly gem (https://github.com/rafmagana/prowly) by Rafael Magana
+
 See LICENSE.txt for further details.
