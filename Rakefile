@@ -20,8 +20,8 @@ Jeweler::Tasks.new do |gem|
   gem.email = "ken.pepple@rabbityard.com"
   gem.authors = ["Ken Pepple"]
   # gem.executables = [ 'notify-my-android' ] 
-  gem.add_runtime_dependency "xml-simple", ">= 1.0.15"
-  gem.add_development_dependency 'webmock'
+  # gem.add_runtime_dependency "xml-simple", ">= 1.0.15"
+  # gem.add_development_dependency 'webmock'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
