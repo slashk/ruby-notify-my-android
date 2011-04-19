@@ -21,7 +21,7 @@ Jeweler::Tasks.new do |gem|
   gem.authors = ["Ken Pepple"]
   gem.executables = [ 'notify-my-android' ] 
   gem.add_runtime_dependency "xml-simple", ">= 1.0.15"
-  #  gem.add_development_dependency 'rspec', '> 1.2.3'
+  gem.add_development_dependency 'webmock'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
