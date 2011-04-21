@@ -4,12 +4,31 @@ Send notifications to Android devices via the Notify My Android API. Details abo
 
 == Installation
 	
-	gem install ruby-notify-my-android
+  gem install ruby-notify-my-android
+
+== Usage from command line
+
+You can send notifications from the command line with the notify-my-android script:
+
+  $ notify-my-android -k 9d0538ab7b52360e906e0e766f34501b69edde92fe3409e9
+  Notification sent !
+
+Here are the full set of parameters that it accepts:
+
+  Usage: notify-my-android [options]
+      -k, --apikey APIKEY              Your API Key
+      -p, --priority PRIORITY          Priority (-2,-1,0,1,2)
+      -a, --application APPNAME        Name of app
+      -e, --event EVENTNAME            Name of event
+      -d, --description DESCRIPTION     Notify text
+
+Any parameters unset will use default values except --apikey
 
 == Usage as a Gem
 	
 Sending a notification via ruby-notify-my-android gem
 
+  require 'rubygems'
   require 'ruby-notify-my-android'
 
   NMA.notify do |n| 
@@ -18,7 +37,6 @@ Sending a notification via ruby-notify-my-android gem
     n.application = "NMA"
     n.event = "Notification"
     n.description = "Your server is under attack!!!"
-    n.url = "http://www.nma.bz"
   end
 
 == Using the API
