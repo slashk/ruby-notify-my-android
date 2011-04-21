@@ -18,7 +18,7 @@ opts.on("-k", "--apikey APIKEY", "Your API Key", String)                {|val| o
 opts.on("-p", "--priority PRIORITY", "Priority (-2,-1,0,1,2)", Integer) {|val| o[:priority] = val }
 opts.on("-a", "--application APPNAME", "Name of app", String)           {|val| o[:application] = val }
 opts.on("-e", "--event EVENTNAME", "Name of event", String)             {|val| o[:event] = val }
-opts.on("-d", "--description DESCRIPTION", "Notify text", String)        {|val| o[:priority] = val }
+opts.on("-d", "--description DESCRIPTION", "Notify text", String)       {|val| o[:description] = val }
 z = opts.parse(ARGV)
 
 # set defaults
