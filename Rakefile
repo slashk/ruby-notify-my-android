@@ -19,7 +19,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Send notifications to Android devices via the Notify My Android API. Details about the API are available at https://nma.usk.bz/api.php .}
   gem.email = "ken.pepple@rabbityard.com"
   gem.authors = ["Ken Pepple"]
-  # gem.executables = [ 'notify-my-android' ] 
+  gem.executables = [ 'notify-my-android' ] 
   # gem.add_runtime_dependency "xml-simple", ">= 1.0.15"
   # gem.add_development_dependency 'webmock'
 end

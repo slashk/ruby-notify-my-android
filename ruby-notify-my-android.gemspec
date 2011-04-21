@@ -5,15 +5,15 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ruby-notify-my-android}
-  s.version = "0.3.2"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ken Pepple"]
-  s.date = %q{2011-04-18}
-  s.default_executable = %q{notify-my-andoid}
+  s.date = %q{2011-04-21}
+  s.default_executable = %q{notify-my-android}
   s.description = %q{Send notifications to Android devices via the Notify My Android API. Details about the API are available at https://nma.usk.bz/api.php .}
   s.email = %q{ken.pepple@rabbityard.com}
-  s.executables = ["notify-my-andoid"]
+  s.executables = ["notify-my-android"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
-    "bin/notify-my-andoid",
+    "bin/notify-my-android",
     "lib/ruby-notify-my-android.rb",
     "lib/ruby-notify-my-android/notification.rb",
     "lib/ruby-notify-my-android/request.rb",
