@@ -10,7 +10,7 @@ module NMA
     class NoApplicationNameGiven < RuntimeError; end
 
     attr_accessor :application, :description
-    attr_accessor :providerkey, :priority, :event, :url
+    attr_accessor :providerkey, :priority, :event
     attr_writer :apikey
 
     def apikey
@@ -27,7 +27,6 @@ module NMA
       @event        = params[:event]        || "NMA is working!!"
       @description  = params[:description]  || "This is the default description"
       @priority     = params[:priority]     || Priority::NORMAL
-      @url          = params[:url]          || nil
     end
 
     def to_params
