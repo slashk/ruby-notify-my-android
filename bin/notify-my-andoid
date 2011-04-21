@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
-$LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__) + '/../lib')
-
+require "rubygems"
 require 'ruby-notify-my-android'
 require 'yaml'
 
@@ -10,7 +9,7 @@ options = { :apikey => nil,
             :description => "test description", 
             :event => "test event", 
             :application => "NMA", 
-            :priority => Priority::NORMAL }
+            :priority => NMA::Priority::NORMAL }
 
 # use first argument on command line as API key
 options[:apikey] = ARGV[0]
