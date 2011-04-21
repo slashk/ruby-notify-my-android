@@ -47,6 +47,7 @@ class TestRubyNotifyMyAndroid < Test::Unit::TestCase
     assert_equal("799", result.response["remaining"])
     assert_equal("200", result.response["code"])
     assert_equal("60", result.response["resettimer"])
+    assert(result.succeeded?)
   end
   
   def test_should_verify_bad_but_valid_size_apikey
