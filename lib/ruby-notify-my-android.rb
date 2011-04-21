@@ -31,5 +31,7 @@ module NMA
   def version
     File.read(File.join(File.dirname(__FILE__), *%w[.. VERSION]))
   end
+  
+  VERSION = self.version
 
 end

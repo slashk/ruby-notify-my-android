@@ -115,6 +115,7 @@ class TestRubyNotifyMyAndroid < Test::Unit::TestCase
   def test_version
     v = File.read(File.join(File.dirname(__FILE__), '..', 'VERSION'))
     assert_equal(v, NMA.version)
+    assert_equal(NMA.version, NMA::VERSION)
   end
 
 end
