@@ -1,8 +1,15 @@
 #!/usr/bin/env ruby
 
-require "rubygems"
-require "ruby-notify-my-android"
-require "optparse"
+begin
+  require "rubygems"
+  require "ruby-notify-my-android"
+  require "optparse"
+rescue LoadError
+  STDERR.puts "The ruby gems ruby-notify-my-android and optparse are required."
+  STDERR.puts "Please install them via gem install ruby-notify-my-android."
+  exit 1
+end
+
 
 # parse options 
 o = {}
@@ -32,7 +39,7 @@ unless options[:apikey].nil?
   end
 else
   puts opts.to_s
-  exit 1
+  exit 2
 end
 
 if result.succeeded?
@@ -40,5 +47,5 @@ if result.succeeded?
   exit 0
 else
   puts "Error in notification: #{result.response["content"]}"
-  exit 1
+  exit 3
 end
