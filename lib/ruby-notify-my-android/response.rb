@@ -19,10 +19,10 @@ module NMA
 
     # A hash of the returned XML response
     attr_accessor :body
-    
+
     # A hash of the cooked XML
     attr_accessor :response
-    
+
     def initialize(response)
       self.raw = response.body
       self.code = response.code

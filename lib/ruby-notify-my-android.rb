@@ -5,9 +5,9 @@ require 'ruby-notify-my-android/notification'
 # This is the main Notify My Andoid module
 
 module NMA
-  
+
   extend self
-  
+
   def notify(notification = Notification.new)
     yield notification if block_given?
     Request.instance.call Request::Command::NOTIFY, notification.to_params
