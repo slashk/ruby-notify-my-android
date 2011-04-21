@@ -68,7 +68,7 @@ The standard API response for a unsuccessful call is as follows:
 Note that the @code signifies the success or failure of the HTTP call, not the NMA call. Use the @response["code"] for that determination.
 
 == Contributing to ruby-notify-my-android
- 
+
 * Familiarize yourself with the documentation at https://nma.usk.bz/api.php
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
