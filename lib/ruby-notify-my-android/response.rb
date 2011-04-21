@@ -1,5 +1,10 @@
-require 'rubygems'
-require 'xmlsimple'
+begin
+  require 'xmlsimple'
+rescue LoadError
+  STDERR.puts "No valid xml-simple library detected, please install one of 'xml-simple'."
+  exit -2
+end
+
 
 module NMA
 
