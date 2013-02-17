@@ -4,8 +4,7 @@ Send notifications to Android devices via the Notify My Android API. Details abo
 
 == Test Status
 
-{<img src="https://travis-ci.org/slashk/ruby-notify-my-android.png" />}[https://travis-ci.org/slashk/ruby-notify-my-android]
-
+{<img src="https://travis-ci.org/slashk/ruby-notify-my-android.png?branch=master" alt="Build Status" />}[https://travis-ci.org/slashk/ruby-notify-my-android]
 
 == Installation
 	
