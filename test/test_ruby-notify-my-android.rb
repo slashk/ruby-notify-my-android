@@ -3,7 +3,7 @@ require 'helper'
 class TestRubyNotifyMyAndroid < Test::Unit::TestCase
 
   def setup
-    @api_endpoint = "https://nma.usk.bz/publicapi/"
+    @api_endpoint = "https://www.notifymyandroid.com/publicapi/"
     @good_apikey = "9d0538ab7b52360e906e0e766f34501b69edde92fe3409e9"
     @bad_apikey = "9d0538ab7b52360e906e0e766f34501b69edde92fe3409e0"
     # verify endpoints and stubs

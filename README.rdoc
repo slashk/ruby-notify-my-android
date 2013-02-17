@@ -1,6 +1,6 @@
 = ruby-notify-my-android
 
-Send notifications to Android devices via the Notify My Android API. Details about the API are available at https://nma.usk.bz/api.php .
+Send notifications to Android devices via the Notify My Android API. Details about the API are available at https://www.notifymyandroid.com/api.php .
 
 == Installation
 	
@@ -69,7 +69,7 @@ Note that the @code signifies the success or failure of the HTTP call, not the N
 
 == Contributing to ruby-notify-my-android
 
-* Familiarize yourself with the documentation at https://nma.usk.bz/api.php
+* Familiarize yourself with the documentation at https://www.notifymyandroid.com/api.php
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project

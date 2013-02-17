@@ -8,7 +8,7 @@ module NMA
     include Singleton
     
     def initialize
-      @url = "https://nma.usk.bz/publicapi"
+      @url = "https://www.notifymyandroid.com/publicapi"
     end
     
     ## Make the actual call to the api
