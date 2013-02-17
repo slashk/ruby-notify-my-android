@@ -17,7 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.license = "MIT"
   gem.summary = %Q{Send notifications to Android devices via the Notify My Android API}
   gem.description = %Q{Send notifications to Android devices via the Notify My Android API. Details about the API are available at https://nma.usk.bz/api.php .}
-  gem.email = "ken.pepple@rabbityard.com"
+  gem.email = "ken@pepple.info"
   gem.authors = ["Ken Pepple"]
   gem.executables = [ 'notify-my-android' ] 
 end
