@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ["Ken Pepple"]
   s.date = %q{2011-04-21}
   s.default_executable = %q{notify-my-android}
-  s.description = %q{Send notifications to Android devices via the Notify My Android API. Details about the API are available at https://nma.usk.bz/api.php .}
+  s.description = %q{Send notifications to Android devices via the Notify My Android API. Details about the API are available at https://www.notifymyandroid.com/api.php .}
   s.email = %q{ken.pepple@rabbityard.com}
   s.executables = ["notify-my-android"]
   s.extra_rdoc_files = [
