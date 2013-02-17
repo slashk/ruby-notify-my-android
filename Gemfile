@@ -9,8 +9,8 @@ gem "xml-simple", ">= 1.0.15"
 # Include everything needed to run rake, tests, features, etc.
 group :development do
   gem "test-unit", ">= 0"
-  gem "bundler", "~> 1.0.0"
-  gem "jeweler", "~> 1.5.2"
-  gem "rcov", ">= 0"
+  gem "bundler"
+  gem "jeweler"
+  gem "rcov", "0.9.11"
   gem "webmock"
 end

@@ -20,8 +20,6 @@ Jeweler::Tasks.new do |gem|
   gem.email = "ken.pepple@rabbityard.com"
   gem.authors = ["Ken Pepple"]
   gem.executables = [ 'notify-my-android' ] 
-  # gem.add_runtime_dependency "xml-simple", ">= 1.0.15"
-  # gem.add_development_dependency 'webmock'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
@@ -41,8 +39,9 @@ end
 
 task :default => :test
 
-require 'rake/rdoctask'
-Rake::RDocTask.new do |rdoc|
+# require 'rake/rdoctask'
+require 'rdoc/task'
+RDoc::Task.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
