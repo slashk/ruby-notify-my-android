@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ken Pepple"]
   s.date = "2013-02-17"
-  s.description = "Send notifications to Android devices via the Notify My Android API. Details about the API are available at https://nma.usk.bz/api.php ."
+  s.description = "Send notifications to Android devices via the Notify My Android API. Details about the API are available at https://www.notifymyandroid.com/api.php ."
   s.email = "ken@pepple.info"
   s.executables = ["notify-my-android"]
   s.extra_rdoc_files = [
